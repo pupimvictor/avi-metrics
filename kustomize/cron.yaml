@@ -1,0 +1,13 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: metrics-collection-cronjob
+spec:
+  schedule: "*/2 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: metrics-collection-container
+            image: your-docker-image:your-tag

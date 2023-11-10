@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: metrics-collection-job
+spec:
+  template:
+    metadata:
+      name: metrics-collection-pod
+    spec:
+      containers:
+      - name: metrics-collection-container
+        image: your-docker-image:your-tag
+  backoffLimit: 4
